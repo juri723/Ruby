@@ -1,0 +1,24 @@
+<div class="main-page">
+  <div class="container">
+    <h1 class="form-heading">Let's play cards!!</h1>
+    <p>5枚のカードの値を教えてね。</p>
+
+    <%= form_tag ("/cards/check"), method: :post do %>
+      <div class="form">
+        <div class="form-body">
+          <input type="text" name="cards" placeholder="S10 H11 D12 C13 H1" value="<%=@card %>">
+          <input type="submit" value="check">
+        </div>
+      </div>
+    <%end %>
+
+    <% unless @msg == "" %>
+      <p><%=@msg %></p>
+    <% end %>
+
+    <% unless @result == "" %>
+    <p><%=@result %></p>
+    <% end %>
+
+  </div>
+</div>

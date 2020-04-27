@@ -1,0 +1,15 @@
+current directory: /Users/m.juri/RubymineProjects/sampleapp/vendor/bundle/ruby/2.3.0/gems/bindex-0.8.1/ext/skiptrace
+/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby -r ./siteconf20200420-64122-fcilj4.rb extconf.rb
+creating Makefile
+
+current directory: /Users/m.juri/RubymineProjects/sampleapp/vendor/bundle/ruby/2.3.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/m.juri/RubymineProjects/sampleapp/vendor/bundle/ruby/2.3.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/m.juri/RubymineProjects/sampleapp/vendor/bundle/ruby/2.3.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20200420-64122-g18g64/skiptrace/internal

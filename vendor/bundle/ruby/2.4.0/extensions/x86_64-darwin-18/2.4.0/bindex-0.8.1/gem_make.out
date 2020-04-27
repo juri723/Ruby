@@ -1,0 +1,15 @@
+current directory: /Users/m.juri/RubymineProjects/sampleapp/vendor/bundle/ruby/2.4.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/m.juri/.rvm/rubies/ruby-2.4.7/bin/ruby -I /Users/m.juri/.rvm/rubies/ruby-2.4.7/lib/ruby/site_ruby/2.4.0 -r ./siteconf20200421-80816-1gxasu9.rb extconf.rb
+creating Makefile
+
+current directory: /Users/m.juri/RubymineProjects/sampleapp/vendor/bundle/ruby/2.4.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/m.juri/RubymineProjects/sampleapp/vendor/bundle/ruby/2.4.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/m.juri/RubymineProjects/sampleapp/vendor/bundle/ruby/2.4.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20200421-80816-uvvq1x/skiptrace/internal
