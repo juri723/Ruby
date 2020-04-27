@@ -8,7 +8,8 @@ class CardsController < ApplicationController
     @msg = Cards::CardsService.validates(@card) #バリデーション結果を変数に代入
 
     if @msg.blank? then
-      @result = Cards::CardsService.checkCards(@card)
+      number = Cards::CardsService.checkCards(@card)
+      @result = Cards::CardsService.change(number)
     else
 
     end

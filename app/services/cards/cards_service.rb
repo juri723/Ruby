@@ -95,6 +95,12 @@
 
     end
 
+    #結果番号を役目に反映する
+    def change(number)
+      result = %w(ハイカード ワンペア ツーペア スリー・オブ・ア・カインド ストレート フラッシュ フルハウス フォー・オブ・ア・カインド ストレートフラッシュ)
+      return result[number]
+    end
+
     #カードリストを受け取り、結果リストの返却
     def judge(cards)
       responses = {}
@@ -103,14 +109,14 @@
       rnumber_list=[]
       i = 0
       n = 0
-      result = %w(ハイカード ワンペア ツーペア スリー・オブ・ア・カインド ストレート フラッシュ フルハウス フォー・オブ・ア・カインド ストレートフラッシュ)
 
       cards.each do |card| #バリデーションが通らない場合、エラーリストを作成。通った場合は結果リストを作成。
         if  Cards::CardsService.validates(card).blank? then
           result_list[i] = {"card"=>[],"hand"=>[],"best"=>[]}
           result_list[i]["card"].push(card)
-          rnumber_list[i] = Cards::CardsService.checkCards(card)
-          result_list[i]["hand"].push(result[Cards::CardsService.checkCards(card)])
+          number = Cards::CardsService.checkCards(card)
+          rnumber_list[i] = number
+          result_list[i]["hand"].push(Cards::CardsService.change(number))
           result_list[i]["best"] = false
           i = i + 1
         else
