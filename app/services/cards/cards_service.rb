@@ -5,21 +5,17 @@
 
     #入力された値が正しいかチェックする
    def validates(card)
-    sgcard = card.split #カード（例：S10)
     msg = "" #バリデーション結果
+    sgcard = card.split #カードの値を配列sgcardに代入する。
 
-    re = /(([CDHS])(1[0-3]|[1-9])( )){4}(([CDHS])(1[0-3]|[1-9]))/m
+    re = /^(([CDHS])(1[0-3]|[1-9])( )){4}(([CDHS])(1[0-3]|[1-9]))$/m
 
     if card.scan(re)  ==[] then
       msg = "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
     end
 
-    unless sgcard.length == 5 then
-      msg = msg + "カードが4枚以下か6枚以上です。"
-    end
-
     if !(sgcard.uniq.count == 5) && sgcard.length == 5 then #カードの重複チェック
-      msg = msg + "カードが重複しています。"
+      msg = "カードが重複しています。"
     end
 
       return msg
@@ -41,8 +37,9 @@
       gap[i] = num[i+1] - num[i]
     end
 
+
     #ストレートのフラグ判定
-      if gap == ( [1,1,1,1] || [1,1,1,9] ) then
+      if (gap == [1,1,1,1]) || (gap == [9,1,1,1]) || (gap == [1,1,1,9] ) then
         straight_flag = 02
       end
 
@@ -95,7 +92,7 @@
 
     end
 
-    #結果番号を役目に反映する
+    #結果番号を役名に反映する
     def change(number)
       result = %w(ハイカード ワンペア ツーペア スリー・オブ・ア・カインド ストレート フラッシュ フルハウス フォー・オブ・ア・カインド ストレートフラッシュ)
       return result[number]
@@ -106,32 +103,34 @@
       responses = {}
       result_list = []
       error_list = []
-      rnumber_list=[]
+      rnumber_list = []
       i = 0
       n = 0
 
       cards.each do |card| #バリデーションが通らない場合、エラーリストを作成。通った場合は結果リストを作成。
         if  Cards::CardsService.validates(card).blank? then
-          result_list[i] = {"card"=>[],"hand"=>[],"best"=>[]}
-          result_list[i]["card"].push(card)
-          number = Cards::CardsService.checkCards(card)
-          rnumber_list[i] = number
-          result_list[i]["hand"].push(Cards::CardsService.change(number))
+          result_list[i] = {"card"=>"a","hand"=>"a","best"=>"a"}
+          result_list[i]["card"] = card
+          rnumber_list[i] =Cards::CardsService.checkCards(card)
+          result_list[i]["hand"] = Cards::CardsService.change(rnumber_list[i])
           result_list[i]["best"] = false
           i = i + 1
         else
-          error_list[n] = {"card"=>[],"msg"=>[]}
-          error_list[n]["card"].push(card)
-          error_list[n]["msg"].push(Cards::CardsService.validates(card))
+          error_list[n] = {"card"=>"","msg"=>""}
+          error_list[n]["card"] += card
+          error_list[n]["msg"] += Cards::CardsService.validates(card)
           n = n + 1
         end
       end
 
       #役が最も強いインデックスを探し、変数xに代入
+      unless rnumber_list == [] then
       x = rnumber_list.find_index(rnumber_list.max)
 
       #最も強い役にtrueを代入
       result_list[x]["best"] = true
+
+      end
 
       if result_list.present? then
         responses.store("result",result_list)
