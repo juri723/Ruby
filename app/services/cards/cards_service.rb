@@ -6,16 +6,16 @@
     #入力された値が正しいかチェックする
    def validates(card)
     msg = "" #バリデーション結果
-    sgcard = card.split #カードの値を配列sgcardに代入する。
+    sgcard = card.split #カードの値を配列sgcard（シングルカード）に代入する。
 
     re = /^(([CDHS])(1[0-3]|[1-9])( )){4}(([CDHS])(1[0-3]|[1-9]))$/m
 
-    if card.scan(re)  ==[] then
-      msg = "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
-    end
-
     if !(sgcard.uniq.count == 5) && sgcard.length == 5 then #カードの重複チェック
       msg = "カードが重複しています。"
+    end
+
+    if card.scan(re)  ==[] then
+      msg = "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
     end
 
       return msg
@@ -92,18 +92,18 @@
 
     end
 
-    #結果番号を役名に反映する
+    #結果番号を役名に変換する
     def change(number)
       result = %w(ハイカード ワンペア ツーペア スリー・オブ・ア・カインド ストレート フラッシュ フルハウス フォー・オブ・ア・カインド ストレートフラッシュ)
       return result[number]
     end
 
-    #カードリストを受け取り、結果リストの返却
+    #カードリストを受け取り、結果の返却
     def judge(cards)
-      responses = {}
-      result_list = []
-      error_list = []
-      rnumber_list = []
+      responses = {} #結果リストとエラーリストが格納されている。
+      result_list = [] #結果リスト
+      error_list = [] #エラーメッセージが入っている配列
+      number_list = [] #結果番号が入っている配列
       i = 0
       n = 0
 
@@ -111,8 +111,8 @@
         if  Cards::CardsService.validates(card).blank? then
           result_list[i] = {"card"=>"a","hand"=>"a","best"=>"a"}
           result_list[i]["card"] = card
-          rnumber_list[i] =Cards::CardsService.checkCards(card)
-          result_list[i]["hand"] = Cards::CardsService.change(rnumber_list[i])
+          number_list[i] =Cards::CardsService.checkCards(card)
+          result_list[i]["hand"] = Cards::CardsService.change(number_list[i])
           result_list[i]["best"] = false
           i = i + 1
         else
@@ -124,8 +124,8 @@
       end
 
       #役が最も強いインデックスを探し、変数xに代入
-      unless rnumber_list == [] then
-      x = rnumber_list.find_index(rnumber_list.max)
+      unless number_list == [] then
+      x = number_list.find_index(number_list.max)
 
       #最も強い役にtrueを代入
       result_list[x]["best"] = true

@@ -39,12 +39,36 @@ RSpec.describe '/api/poker', type: :request do
     end
   end
 
-  #異常系
+  #異常系（想定外のパラメーター名）
   describe 'POST #post' do
-    before{post '/api/poker', params: {cars:["H1 H13 H12 H11 C8"]}}
+    before{post '/api/poker', params: {karuta:["H1 H13 H12 H11 C8"]}}
     it 'has a 400 http status code' do
       expect(response.status).to eq 400
     end
   end
 
+  #異常系（想定外のHTTPリクエスト）
+  describe 'POST #get' do
+    before{get '/api/poker', params: {cards:["H1 H13 H12 H11 C8"]}}
+    it 'has a 405 http status code' do
+      expect(response.status).to eq 405
+    end
   end
+
+  describe 'POST #delete' do
+    before{delete '/api/poker', params: {cards:["H1 H13 H12 H11 C8"]}}
+    it 'has a 405 http status code' do
+      expect(response.status).to eq 405
+    end
+  end
+
+  #異常系（xml形式のリクエスト）
+  describe 'POST #post' do
+    it 'request type is xml' do
+
+      post '/api/poker', params: {cards: ["H1 H13 H12 H11 H10"]}, headers: { "Content-Type" => "application/xml" }
+     json = JSON.parse(response.body)
+      expect(json['error']).to eq ("The provided content-type 'application/xml' is not supported.")
+    end
+end
+end

@@ -23,10 +23,27 @@ RSpec.describe "CardsService" do
   end
 
   it 'カードが4枚' do
+    expect(Cards::CardsService.validates("H12 C10 D8 H3")).to eq "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
   end
 
   it 'カードが6枚' do
     expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 H3")).to eq "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
+  end
+
+  it '全角入力している' do
+  expect(Cards::CardsService.validates("Ｈ１０　Ｃ１２　Ｄ８　Ｄ９　Ｃ１２")).to eq "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
+  end
+
+  it 'ひらがなが入っている' do
+    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 Hさん")).to eq "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
+  end
+
+  it '機種依存文字が入っている' do
+    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 ♡3")).to eq "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
+  end
+
+  it '記号が入っている' do
+    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 H?")).to eq "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
   end
 
   end

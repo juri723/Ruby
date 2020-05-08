@@ -20,6 +20,15 @@ module API
           responses
         end
 
+        #post以外でのHTTPリクエストの時
+        get do
+          error!("not allowed",405)
+        end
+
+        delete do
+          error!("not allowed",405)
+        end
+
       end
     end
   end
