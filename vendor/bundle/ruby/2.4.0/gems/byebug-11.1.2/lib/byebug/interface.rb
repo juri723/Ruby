@@ -11,7 +11,7 @@ module Byebug
   #
   # Main Interface class
   #
-  # Contains common functionality to all implemented interfaces.
+  # Contains commons functionality to all implemented interfaces.
   #
   class Interface
     include Helpers::FileHelper

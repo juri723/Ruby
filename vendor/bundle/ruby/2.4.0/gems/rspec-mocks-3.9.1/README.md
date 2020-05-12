@@ -174,7 +174,7 @@ user.accept_invitation(invitation)
 
 expect(invitation).to have_received(:accept)
 
-# You can also use other common message expectations. For example:
+# You can also use other commons message expectations. For example:
 expect(invitation).to have_received(:accept).with(mailer)
 expect(invitation).to have_received(:accept).twice
 expect(invitation).to_not have_received(:accept).with(mailer)

@@ -78,7 +78,7 @@ module ActionView
       # Creates a dropdown selection box, or if the <tt>:multiple</tt> option is set to true, a multiple
       # choice selection box.
       #
-      # Helpers::FormOptions can be used to create common select boxes such as countries, time zones, or
+      # Helpers::FormOptions can be used to create commons select boxes such as countries, time zones, or
       # associated records. <tt>option_tags</tt> is a string containing the option tags for the select box.
       #
       # ==== Options

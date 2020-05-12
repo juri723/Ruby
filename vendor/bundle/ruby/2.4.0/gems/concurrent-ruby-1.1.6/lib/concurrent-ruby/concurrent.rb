@@ -56,7 +56,7 @@ require 'concurrent/options'
 #     clock will be used as a fallback. An operating system monotonic clock is both
 #     faster and more reliable than the pure-Ruby implementation. The pure-Ruby
 #     implementation should be fast and reliable enough for most non-realtime
-#     operations. At this time the common Ruby platforms that provide access to an
+#     operations. At this time the commons Ruby platforms that provide access to an
 #     operating system monotonic clock are MRI 2.1 and above and JRuby (all versions).
 #
 #   @see http://linux.die.net/man/3/clock_gettime Linux clock_gettime(3)

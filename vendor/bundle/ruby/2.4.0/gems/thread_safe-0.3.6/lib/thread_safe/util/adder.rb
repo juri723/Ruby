@@ -13,7 +13,7 @@ module ThreadSafe
     # variables maintaining the sum.
     #
     # This class is usually preferable to single +Atomic+ reference when
-    # multiple threads update a common sum that is used for purposes such
+    # multiple threads update a commons sum that is used for purposes such
     # as collecting statistics, not for fine-grained synchronization
     # control.  Under low update contention, the two classes have similar
     # characteristics. But under high contention, expected throughput of

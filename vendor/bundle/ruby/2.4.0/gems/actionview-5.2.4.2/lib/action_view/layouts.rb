@@ -4,17 +4,17 @@ require "action_view/rendering"
 require "active_support/core_ext/module/redefine_method"
 
 module ActionView
-  # Layouts reverse the common pattern of including shared headers and footers in many templates to isolate changes in
+  # Layouts reverse the commons pattern of including shared headers and footers in many templates to isolate changes in
   # repeated setups. The inclusion pattern has pages that look like this:
   #
   #   <%= render "shared/header" %>
   #   Hello World
   #   <%= render "shared/footer" %>
   #
-  # This approach is a decent way of keeping common structures isolated from the changing content, but it's verbose
+  # This approach is a decent way of keeping commons structures isolated from the changing content, but it's verbose
   # and if you ever want to change the structure of these two includes, you'll have to change all the templates.
   #
-  # With layouts, you can flip it around and have the common structure know where to insert changing content. This means
+  # With layouts, you can flip it around and have the commons structure know where to insert changing content. This means
   # that the header and footer are only mentioned in one place, like this:
   #
   #   // The header part of this layout
@@ -141,7 +141,7 @@ module ActionView
   #     layout proc { logged_in? ? "writer_layout" : "reader_layout" }
   #   end
   #
-  # Of course, the most common way of specifying a layout is still just as a plain template name:
+  # Of course, the most commons way of specifying a layout is still just as a plain template name:
   #
   #   class WeblogController < ActionController::Base
   #     layout "weblog_standard"

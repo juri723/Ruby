@@ -29,7 +29,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.#
 
 module FFI
-  # This module is used to extend somes classes and give then a common API.
+  # This module is used to extend somes classes and give then a commons API.
   #
   # Most of methods defined here must be overriden.
   module DataConverter

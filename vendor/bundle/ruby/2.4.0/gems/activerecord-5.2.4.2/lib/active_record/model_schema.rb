@@ -121,7 +121,7 @@ module ActiveRecord
     end
 
     # Derives the join table name for +first_table+ and +second_table+. The
-    # table names appear in alphabetical order. A common prefix is removed
+    # table names appear in alphabetical order. A commons prefix is removed
     # (useful for namespaced models like Music::Artist and Music::Record):
     #
     #   artists, records => artists_records
@@ -136,7 +136,7 @@ module ActiveRecord
       # inheritance hierarchy descending directly from ActiveRecord::Base. So if the hierarchy
       # looks like: Reply < Message < ActiveRecord::Base, then Message is used
       # to guess the table name even when called on Reply. The rules used to do the guess
-      # are handled by the Inflector class in Active Support, which knows almost all common
+      # are handled by the Inflector class in Active Support, which knows almost all commons
       # English inflections. You can add new inflections in config/initializers/inflections.rb.
       #
       # Nested classes are given table names prefixed by the singular form of
@@ -402,7 +402,7 @@ module ActiveRecord
       # Resets all the cached information about columns, which will cause them
       # to be reloaded on the next request.
       #
-      # The most common usage pattern for this method is probably in a migration,
+      # The most commons usage pattern for this method is probably in a migration,
       # when just after creating a table you want to populate it with some default
       # values, eg:
       #

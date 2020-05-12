@@ -4,7 +4,7 @@ module ActiveRecord
   module Associations
     # = Active Record Association Collection
     #
-    # CollectionAssociation is an abstract class that provides common stuff to
+    # CollectionAssociation is an abstract class that provides commons stuff to
     # ease the implementation of association proxies that represent
     # collections. See the class hierarchy in Association.
     #
@@ -12,7 +12,7 @@ module ActiveRecord
     #     HasManyAssociation => has_many
     #       HasManyThroughAssociation + ThroughAssociation => has_many :through
     #
-    # The CollectionAssociation class provides common methods to the collections
+    # The CollectionAssociation class provides commons methods to the collections
     # defined by +has_and_belongs_to_many+, +has_many+ or +has_many+ with
     # the +:through association+ option.
     #

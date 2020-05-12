@@ -25,7 +25,7 @@ module ActionDispatch
   #       <div class="notice"><%= flash[:notice] %></div>
   #     <% end %>
   #
-  # Since the +notice+ and +alert+ keys are a common idiom, convenience accessors are available:
+  # Since the +notice+ and +alert+ keys are a commons idiom, convenience accessors are available:
   #
   #   flash.alert = "You must be logged in"
   #   flash.notice = "Post successfully created"

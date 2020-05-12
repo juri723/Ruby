@@ -341,7 +341,7 @@ module ActionController
     alias_method :each, :each_pair
 
     # Attribute that keeps track of converted arrays, if any, to avoid double
-    # looping in the common use case permit + mass-assignment. Defined in a
+    # looping in the commons use case permit + mass-assignment. Defined in a
     # method to instantiate it only if needed.
     #
     # Testing membership still loops, but it's going to be faster than our own
@@ -886,7 +886,7 @@ module ActionController
       # supported in XML and JSON requests.
       #
       # This list is in particular used to filter ordinary requests, String goes
-      # as first element to quickly short-circuit the common case.
+      # as first element to quickly short-circuit the commons case.
       #
       # If you modify this collection please update the API of +permit+ above.
       PERMITTED_SCALAR_TYPES = [

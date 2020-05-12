@@ -77,7 +77,7 @@ module ThreadSafe
   # always have hash field == +MOVED+).
   #
   # Insertion (via +[]=+ or its variants) of the first node in an empty bin is
-  # performed by just CASing it to the bin. This is by far the most common case
+  # performed by just CASing it to the bin. This is by far the most commons case
   # for put operations under most key/hash distributions. Other update
   # operations (insert, delete, and replace) require locks. We do not want to
   # waste the space required to associate a distinct lock object with each bin,
@@ -100,7 +100,7 @@ module ThreadSafe
   # The main disadvantage of per-bin locks is that other update operations on
   # other nodes in a bin list protected by the same lock can stall, for example
   # when user +eql?+ or mapping functions take a long time. However,
-  # statistically, under random hash codes, this is not a common problem.
+  # statistically, under random hash codes, this is not a commons problem.
   # Ideally, the frequency of nodes in bins follows a Poisson distribution
   # (http://en.wikipedia.org/wiki/Poisson_distribution) with a parameter of
   # about 0.5 on average, given the resizing threshold of 0.75, although with a

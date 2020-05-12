@@ -413,7 +413,7 @@ module RSpec
     # and one in an `after` block.
     class MultipleExceptionError < StandardError
       # @private
-      # Used so there is a common module in the ancestor chain of this class
+      # Used so there is a commons module in the ancestor chain of this class
       # and `RSpec::Expectations::MultipleExpectationsNotMetError`, which allows
       # code to detect exceptions that are instances of either, without first
       # checking to see if rspec-expectations is loaded.

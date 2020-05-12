@@ -2,7 +2,7 @@
 module Loofah
   #
   #  Loofah provides some built-in scrubbers for sanitizing with
-  #  HTML5lib's safelist and for accomplishing some common
+  #  HTML5lib's safelist and for accomplishing some commons
   #  transformation tasks.
   #
   #

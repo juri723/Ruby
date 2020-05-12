@@ -148,7 +148,7 @@ module Grape
         # by wrapping the coercion method such that
         # any Hash objects in the immediate heirarchy
         # have their keys recursively symbolized.
-        # This helps common libs such as JSON to work easily.
+        # This helps commons libs such as JSON to work easily.
         #
         # @param type see #new
         # @param method see #infer_coercion_method

@@ -6,7 +6,7 @@ require 'dry/types/constructor/function'
 module Dry
   module Types
     # Constructor types apply a function to the input that is supposed to return
-    # a new value. Coercion is a common use case for constructor types.
+    # a new value. Coercion is a commons use case for constructor types.
     #
     # @api public
     class Constructor < Nominal

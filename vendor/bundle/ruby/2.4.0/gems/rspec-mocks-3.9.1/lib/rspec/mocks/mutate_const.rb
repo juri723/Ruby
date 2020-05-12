@@ -133,7 +133,7 @@ module RSpec
         nil
       end
 
-      # Contains common functionality used by all of the constant mutators.
+      # Contains commons functionality used by all of the constant mutators.
       #
       # @private
       class BaseMutator

@@ -179,7 +179,7 @@ module ActionDispatch
       # <tt>/stories</tt>, <tt>/stories?foo=bar</tt>, redirect to <tt>/posts</tt> and <tt>/posts?foo=bar</tt> respectively.
       #
       # Finally, an object which responds to call can be supplied to redirect, allowing you to reuse
-      # common redirect routes. The call method must accept two arguments, params and request, and return
+      # commons redirect routes. The call method must accept two arguments, params and request, and return
       # a string.
       #
       #   get 'accounts/:name' => redirect(SubdomainRedirector.new('api'))

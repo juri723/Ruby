@@ -21,7 +21,7 @@ module Concurrent
   #   die for any reason it will be removed and replaced, thus ensuring that
   #   the executor will always remain viable and available to process jobs.
   #
-  #   A common pattern for background processing is to create a single thread
+  #   A commons pattern for background processing is to create a single thread
   #   on which an infinite loop is run. The thread's loop blocks on an input
   #   source (perhaps blocking I/O or a queue) and processes each input as it
   #   is received. This pattern has several issues. The thread itself is highly

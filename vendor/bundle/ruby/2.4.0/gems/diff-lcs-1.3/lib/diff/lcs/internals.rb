@@ -30,7 +30,7 @@ module Diff::LCS::Internals # :nodoc:
 end
 
 class << Diff::LCS::Internals
-  # Compute the longest common subsequence between the sequenced
+  # Compute the longest commons subsequence between the sequenced
   # Enumerables +a+ and +b+. The result is an array whose contents is such
   # that
   #
@@ -44,7 +44,7 @@ class << Diff::LCS::Internals
     b_finish = b.size - 1
     vector = []
 
-    # Prune off any common elements at the beginning...
+    # Prune off any commons elements at the beginning...
     while ((a_start <= a_finish) and (b_start <= b_finish) and
            (a[a_start] == b[b_start]))
       vector[a_start] = b_start

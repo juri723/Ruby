@@ -55,7 +55,7 @@ module RSpec
       if RSpec::Support::Ruby.jruby?
         # On JRuby, `caller` and `raise` produce different backtraces with regards to `.java`
         # stack frames. It's important that we use `raise` for JRuby to produce a backtrace
-        # that has a continuous common section with the raised `MultipleExpectationsNotMetError`,
+        # that has a continuous commons section with the raised `MultipleExpectationsNotMetError`,
         # so that rspec-core's truncation logic can work properly on it to list the backtrace
         # relative to the `aggregate_failures` block.
         def assign_backtrace(failure)

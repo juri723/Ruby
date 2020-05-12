@@ -1244,7 +1244,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * position.
 	 */
 	function generatedPositionAfter(mappingA, mappingB) {
-	  // Optimized for most common case
+	  // Optimized for most commons case
 	  var lineA = mappingA.generatedLine;
 	  var lineB = mappingB.generatedLine;
 	  var columnA = mappingA.generatedColumn;

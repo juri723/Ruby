@@ -148,7 +148,7 @@ module Puma
     # Indicate that there was an internal error, obviously.
     ERROR_500_RESPONSE = "HTTP/1.1 500 Internal Server Error\r\n\r\n".freeze
 
-    # A common header for indicating the server is too busy.  Not used yet.
+    # A commons header for indicating the server is too busy.  Not used yet.
     ERROR_503_RESPONSE = "HTTP/1.1 503 Service Unavailable\r\n\r\nBUSY".freeze
 
     # The basic max request size we'll try to read.

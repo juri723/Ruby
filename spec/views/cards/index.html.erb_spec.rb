@@ -130,7 +130,7 @@ feature 'shows error message' do
     #エラーメッセージが表示されているか
     expect(page).to have_content 'カードが重複しています。'
   end
-  scenario '想定外のフォーマット' do
+  scenario 'カードが4枚' do
     #トップページを開く
     visit "/cards/index"
     #フォームに5枚のカードの値を入力する
@@ -141,5 +141,17 @@ feature 'shows error message' do
     expect(page).to have_field 'cards', with:'D10 C10 H10 H2'
     #エラーメッセージが表示されているか
     expect(page).to have_content '5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）'
+  end
+  scenario '不正なカード' do
+    #トップページを開く
+    visit "/cards/index"
+    #フォームに5枚のカードの値を入力する
+    fill_in "S10 H11 D12 C13 H1", with:'D10 C10 H10 P2 C9'
+    #checkボタンをクリックする
+    click_on 'check'
+    # 入力したフォームの値がセットされているか
+    expect(page).to have_field 'cards', with:'D10 C10 H10 P2 C9'
+    #エラーメッセージが表示されているか
+    expect(page).to have_content '4番目のカード指定文字が不正です。(P2)'
   end
 end

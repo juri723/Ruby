@@ -716,7 +716,7 @@ module Puma
           keep_alive = env.fetch(HTTP_CONNECTION, "").downcase != CLOSE
           include_keepalive_header = false
 
-          # An optimization. The most common response is 200, so we can
+          # An optimization. The most commons response is 200, so we can
           # reply with the proper 200 status without having to compute
           # the response header.
           #

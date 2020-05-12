@@ -159,7 +159,7 @@ module ActiveSupport
     end
 
     # Expose one or more attributes within a block. Old values are returned after the block concludes.
-    # Example demonstrating the common use of needing to set Current attributes outside the request-cycle:
+    # Example demonstrating the commons use of needing to set Current attributes outside the request-cycle:
     #
     #   class Chat::PublicationJob < ApplicationJob
     #     def perform(attributes, room_number, creator)

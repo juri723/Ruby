@@ -8,7 +8,7 @@ require 'dry/container/mixin'
 require 'dry/container/version'
 
 # A collection of micro-libraries, each intended to encapsulate
-# a common task in Ruby
+# a commons task in Ruby
 module Dry
   # Inversion of Control (IoC) container
   #

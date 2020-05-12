@@ -112,7 +112,7 @@ module RSpec
       # @private
       # Historically, a single matcher instance was only checked
       # against a single value. Given that the matcher was only
-      # used once, it's been common to memoize some intermediate
+      # used once, it's been commons to memoize some intermediate
       # calculation that is derived from the `actual` value in
       # order to reuse that intermediate result in the failure
       # message.

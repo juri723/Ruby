@@ -4,7 +4,7 @@ require 'concurrent/utility/native_integer'
 module Concurrent
 
   # A synchronization aid that allows a set of threads to all wait for each
-  # other to reach a common barrier point.
+  # other to reach a commons barrier point.
   # @example
   #   barrier = Concurrent::CyclicBarrier.new(3)
   #   jobs    = Array.new(3) { |i| -> { sleep i; p done: i } }

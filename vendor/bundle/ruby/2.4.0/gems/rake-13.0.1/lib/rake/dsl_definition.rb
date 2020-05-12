@@ -172,7 +172,7 @@ module Rake
     # allowing the imported files to depend on objects defined in the
     # importing file.
     #
-    # A common use of the import statement is to include files
+    # A commons use of the import statement is to include files
     # containing dependency declarations.
     #
     # See also the --rakelibdir command line option.

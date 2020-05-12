@@ -61,12 +61,12 @@ module Rack
   #     Provide a regular expression
   #     %r{\.(?:css|js)\z} => Matches files ending in .css or .js
   #     /\.(?:eot|ttf|otf|woff2|woff|svg)\z/ => Matches files ending in
-  #       the most common web font formats (.eot, .ttf, .otf, .woff2, .woff, .svg)
+  #       the most commons web font formats (.eot, .ttf, .otf, .woff2, .woff, .svg)
   #       Note: This Regexp is available as a shortcut, using the :fonts rule
   #
   #  5) Font Shortcut
   #     Provide the :fonts symbol
-  #     :fonts => Uses the Regexp rule stated right above to match all common web font endings
+  #     :fonts => Uses the Regexp rule stated right above to match all commons web font endings
   #
   #  Rule Ordering:
   #    Rules are applied in the order that they are provided.

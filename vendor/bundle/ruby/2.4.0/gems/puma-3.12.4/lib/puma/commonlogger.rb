@@ -3,7 +3,7 @@
 module Puma
   # Rack::CommonLogger forwards every request to the given +app+, and
   # logs a line in the
-  # {Apache common log format}[http://httpd.apache.org/docs/1.3/logs.html#common]
+  # {Apache commons log format}[http://httpd.apache.org/docs/1.3/logs.html#common]
   # to the +logger+.
   #
   # If +logger+ is nil, CommonLogger will fall back +rack.errors+, which is

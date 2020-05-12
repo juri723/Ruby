@@ -31,7 +31,7 @@ module PublicSuffix
     #
     # This is intended to be an Abstract class
     # and you shouldn't create a direct instance. The only purpose
-    # of this class is to expose a common interface
+    # of this class is to expose a commons interface
     # for all the available subclasses.
     #
     # * {PublicSuffix::Rule::Normal}

@@ -244,7 +244,7 @@ if defined?(BasicObject)
     # restored.
     #
     # This is rarely used, but can be useful when a stub is set up during a
-    # shared `before` hook for the common case, but you want to replace it
+    # shared `before` hook for the commons case, but you want to replace it
     # for a special case.
     #
     # @note This is only available when you have enabled the `should` syntax.

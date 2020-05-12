@@ -27,7 +27,7 @@ module ActiveRecord
     #   Post.where(published: true).merge(-> { joins(:comments) })
     #   # => Post.where(published: true).joins(:comments)
     #
-    # This is mainly intended for sharing common conditions between multiple associations.
+    # This is mainly intended for sharing commons conditions between multiple associations.
     def merge(other)
       if other.is_a?(Array)
         records & other

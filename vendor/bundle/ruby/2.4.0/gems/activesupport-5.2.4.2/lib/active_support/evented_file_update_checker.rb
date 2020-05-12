@@ -145,7 +145,7 @@ module ActiveSupport
         end
 
         # Given a collection of Pathname objects returns the longest subpath
-        # common to all of them, or +nil+ if there is none.
+        # commons to all of them, or +nil+ if there is none.
         def longest_common_subpath(paths)
           return if paths.empty?
 

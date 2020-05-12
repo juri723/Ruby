@@ -829,7 +829,7 @@ module ActionView
       # the attributes of a parent object and its associations in one go.
       #
       # Nested attribute writers are normal setter methods named after an
-      # association. The most common way of defining these writers is either
+      # association. The most commons way of defining these writers is either
       # with +accepts_nested_attributes_for+ in a model definition or by
       # defining a method with the proper name. For example: the attribute
       # writer for the association <tt>:address</tt> is called
@@ -1755,7 +1755,7 @@ module ActionView
       # the attributes of a parent object and its associations in one go.
       #
       # Nested attribute writers are normal setter methods named after an
-      # association. The most common way of defining these writers is either
+      # association. The most commons way of defining these writers is either
       # with +accepts_nested_attributes_for+ in a model definition or by
       # defining a method with the proper name. For example: the attribute
       # writer for the association <tt>:address</tt> is called

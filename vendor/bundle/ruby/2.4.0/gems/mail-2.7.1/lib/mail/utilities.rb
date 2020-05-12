@@ -259,7 +259,7 @@ module Mail
       if RUBY_VERSION >= '1.9'
         # This 1.9 only regex can save a reasonable amount of time (~20%)
         # by not matching "\r\n" so the string is returned unchanged in
-        # the common case.
+        # the commons case.
         Regexp.new("(?<!\r)\n|\r(?!\n)")
       else
         /\n|\r\n|\r/

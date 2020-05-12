@@ -1,6 +1,8 @@
+require "net/http"
+
 module API
   module Ver1
-    include Cards::CardsService #ServiceをControllerでも利用できるようにする。
+    include Cards::CardsService #ServiceをAPIでも利用できるようにする。
     class Poker < Grape::API
       version 'v1', using: :header, vendor: 'api'
       format :json
@@ -15,21 +17,15 @@ module API
 
         # 入力された値をチェックし、ポーカーの役判定を行う。
         post do
+          if params.keys == ["cards"] then
           cards = params[:cards]
           responses = Cards::CardsService.judge(cards)
           responses
-        end
-
-        #post以外でのHTTPリクエストの時
-        get do
-          error!("not allowed",405)
-        end
-
-        delete do
-          error!("not allowed",405)
-        end
-
+          else
+            error!("不正なパラメータが含まれてます。", 400)
       end
     end
   end
 end
+  end
+  end

@@ -134,7 +134,7 @@ case $maybe_os in
     ;;
 esac
 
-### Let's recognize common machines as not being operating systems so
+### Let's recognize commons machines as not being operating systems so
 ### that things like config.sub decstation-3100 work.  We also
 ### recognize some manufacturers as not being operating systems, so we
 ### can provide default operating systems below.

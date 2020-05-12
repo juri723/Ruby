@@ -1,6 +1,6 @@
 module Virtus
 
-  # Extensions common for both classes and instances
+  # Extensions commons for both classes and instances
   module Extensions
     WRITER_METHOD_REGEXP   = /=\z/.freeze
     INVALID_WRITER_METHODS = %w[ == != === []= attributes= ].to_set.freeze

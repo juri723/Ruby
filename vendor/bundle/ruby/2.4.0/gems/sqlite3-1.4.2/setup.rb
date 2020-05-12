@@ -154,7 +154,7 @@ class ConfigTable
     [ 'std-ruby',  [ stdruby,
                      'path',
                      'the directory for standard ruby libraries' ] ],
-    [ 'site-ruby-common', [ siteruby,
+    [ 'site-ruby-commons', [ siteruby,
                      'path',
                      'the directory for version-independent non-standard ruby libraries' ] ],
     [ 'site-ruby', [ versite,

@@ -8,7 +8,7 @@ module Diff; end unless defined? Diff
 # one.
 #
 # I think what they ended up using (and I hope someone will correct me,
-# because I am not very confident about this) was the `longest common
+# because I am not very confident about this) was the `longest commons
 # subsequence' method. In the LCS problem, you have two sequences of items:
 #
 #    a b c d f g h j q z
@@ -43,7 +43,7 @@ module Diff; end unless defined? Diff
 #    a x b y c         z p d q
 #    a   b   c a b y c z
 #
-# This finds the common subsequence +a b c z+. But actually, the LCS is +a x
+# This finds the commons subsequence +a b c z+. But actually, the LCS is +a x
 # b y c z+:
 #
 #          a x b y c z p d q
@@ -56,7 +56,7 @@ require 'diff/lcs/callbacks'
 require 'diff/lcs/internals'
 
 module Diff::LCS
-  # Returns an Array containing the longest common subsequence(s) between
+  # Returns an Array containing the longest commons subsequence(s) between
   # +self+ and +other+. See Diff::LCS#LCS.
   #
   #   lcs = seq1.lcs(seq2)
@@ -76,14 +76,14 @@ module Diff::LCS
     Diff::LCS.sdiff(self, other, callbacks, &block)
   end
 
-  # Traverses the discovered longest common subsequences between +self+ and
+  # Traverses the discovered longest commons subsequences between +self+ and
   # +other+. See Diff::LCS#traverse_sequences.
   def traverse_sequences(other, callbacks = nil, &block)
     traverse_sequences(self, other, callbacks ||
                        Diff::LCS.YieldingCallbacks, &block)
   end
 
-  # Traverses the discovered longest common subsequences between +self+ and
+  # Traverses the discovered longest commons subsequences between +self+ and
   # +other+ using the alternate, balanced algorithm. See
   # Diff::LCS#traverse_balanced.
   def traverse_balanced(other, callbacks = nil, &block)
@@ -199,7 +199,7 @@ class << Diff::LCS
   # Optional callback methods are <em>emphasized</em>.
   #
   # callbacks#match::               Called when +a+ and +b+ are pointing to
-  #                                 common elements in +A+ and +B+.
+  #                                 commons elements in +A+ and +B+.
   # callbacks#discard_a::           Called when +a+ is pointing to an
   #                                 element not in +B+.
   # callbacks#discard_b::           Called when +b+ is pointing to an
@@ -224,7 +224,7 @@ class << Diff::LCS
   # through the sequences one element at a time, calling a method on the
   # user-specified callback object before each advance. It will advance the
   # arrows in such a way that if there are elements <tt>A[i]</tt> and
-  # <tt>B[j]</tt> which are both equal and part of the longest common
+  # <tt>B[j]</tt> which are both equal and part of the longest commons
   # subsequence, there will be some moment during the execution of
   # #traverse_sequences when arrow +a+ is pointing to <tt>A[i]</tt> and
   # arrow +b+ is pointing to <tt>B[j]</tt>. When this happens,
@@ -232,10 +232,10 @@ class << Diff::LCS
   # advance both arrows.
   #
   # Otherwise, one of the arrows is pointing to an element of its sequence
-  # that is not part of the longest common subsequence. #traverse_sequences
+  # that is not part of the longest commons subsequence. #traverse_sequences
   # will advance that arrow and will call <tt>callbacks#discard_a</tt> or
   # <tt>callbacks#discard_b</tt>, depending on which arrow it advanced. If
-  # both arrows point to elements that are not part of the longest common
+  # both arrows point to elements that are not part of the longest commons
   # subsequence, then #traverse_sequences will advance one of them and call
   # the appropriate callback, but it is not specified which it will call.
   #
@@ -378,7 +378,7 @@ class << Diff::LCS
 
   # #traverse_balanced is an alternative to #traverse_sequences. It uses a
   # different algorithm to iterate through the entries in the computed
-  # longest common subsequence. Instead of viewing the changes as insertions
+  # longest commons subsequence. Instead of viewing the changes as insertions
   # or deletions from one of the sequences, #traverse_balanced will report
   # <em>changes</em> between the sequences.
   #
@@ -394,7 +394,7 @@ class << Diff::LCS
   # Optional callback methods are <em>emphasized</em>.
   #
   # callbacks#match::               Called when +a+ and +b+ are pointing to
-  #                                 common elements in +A+ and +B+.
+  #                                 commons elements in +A+ and +B+.
   # callbacks#discard_a::           Called when +a+ is pointing to an
   #                                 element not in +B+.
   # callbacks#discard_b::           Called when +b+ is pointing to an
@@ -425,7 +425,7 @@ class << Diff::LCS
   # through the sequences one element at a time, calling a method on the
   # user-specified callback object before each advance. It will advance the
   # arrows in such a way that if there are elements <tt>A[i]</tt> and
-  # <tt>B[j]</tt> which are both equal and part of the longest common
+  # <tt>B[j]</tt> which are both equal and part of the longest commons
   # subsequence, there will be some moment during the execution of
   # #traverse_sequences when arrow +a+ is pointing to <tt>A[i]</tt> and
   # arrow +b+ is pointing to <tt>B[j]</tt>. When this happens,
@@ -435,14 +435,14 @@ class << Diff::LCS
   # === Discards
   #
   # Otherwise, one of the arrows is pointing to an element of its sequence
-  # that is not part of the longest common subsequence. #traverse_sequences
+  # that is not part of the longest commons subsequence. #traverse_sequences
   # will advance that arrow and will call <tt>callbacks#discard_a</tt> or
   # <tt>callbacks#discard_b</tt>, depending on which arrow it advanced.
   #
   # === Changes
   #
   # If both +a+ and +b+ point to elements that are not part of the longest
-  # common subsequence, then #traverse_sequences will try to call
+  # commons subsequence, then #traverse_sequences will try to call
   # <tt>callbacks#change</tt> and advance both arrows. If
   # <tt>callbacks#change</tt> is not implemented, then
   # <tt>callbacks#discard_a</tt> and <tt>callbacks#discard_b</tt> will be

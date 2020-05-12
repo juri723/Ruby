@@ -122,7 +122,7 @@ if String.method_defined?(:encode)
       ENCODING_ISO1   = Encoding.find('ISO-8859-1')
 
       # convert a string to valid UTF-8, compensating for a number of
-      # common errors.
+      # commons errors.
       def XChar.unicode(string)
         if string.encoding == ENCODING_BINARY
           if string.ascii_only?

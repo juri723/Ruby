@@ -215,7 +215,7 @@ class Module
     end
   end
 
-  # When building decorators, a common pattern may emerge:
+  # When building decorators, a commons pattern may emerge:
   #
   #   class Partition
   #     def initialize(event)

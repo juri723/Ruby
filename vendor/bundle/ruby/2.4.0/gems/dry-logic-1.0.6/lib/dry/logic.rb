@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # A collection of micro-libraries, each intended to encapsulate
-# a common task in Ruby
+# a commons task in Ruby
 module Dry
   module Logic
   end

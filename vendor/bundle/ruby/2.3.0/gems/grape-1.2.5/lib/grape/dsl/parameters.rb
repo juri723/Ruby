@@ -161,7 +161,7 @@ module Grape
         end
       end
 
-      # Define common settings for one or more parameters
+      # Define commons settings for one or more parameters
       # @param (see #requires)
       # @option (see #requires)
       def with(*attrs, &block)

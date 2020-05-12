@@ -6,7 +6,7 @@ module ActiveJob
   module QueueAdapters
     # == Delayed Job adapter for Active Job
     #
-    # Delayed::Job (or DJ) encapsulates the common pattern of asynchronously
+    # Delayed::Job (or DJ) encapsulates the commons pattern of asynchronously
     # executing longer tasks in the background. Although DJ can have many
     # storage backends, one of the most used is based on Active Record.
     # Read more about Delayed Job {here}[https://github.com/collectiveidea/delayed_job].

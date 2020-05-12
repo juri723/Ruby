@@ -67,7 +67,7 @@ module Grape
         end
 
         # Virtus will infer coercion and validation rules
-        # for many common ruby types.
+        # for many commons ruby types.
         Virtus::Attribute.build(conversion_type, converter_options)
       end
 

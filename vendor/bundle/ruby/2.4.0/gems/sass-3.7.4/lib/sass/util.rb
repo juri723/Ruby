@@ -153,7 +153,7 @@ module Sass
     # @param arr [Array]
     # @return [Array] The enumerable with strings merged
     def merge_adjacent_strings(arr)
-      # Optimize for the common case of one element
+      # Optimize for the commons case of one element
       return arr if arr.size < 2
       arr.inject([]) do |a, e|
         if e.is_a?(String)
@@ -324,8 +324,8 @@ module Sass
       end
     end
 
-    # Computes a single longest common subsequence for `x` and `y`.
-    # If there are more than one longest common subsequences,
+    # Computes a single longest commons subsequence for `x` and `y`.
+    # If there are more than one longest commons subsequences,
     # the one returned is that which starts first in `x`.
     #
     # @param x [Array]
@@ -1117,7 +1117,7 @@ module Sass
       c
     end
 
-    # Computes a single longest common subsequence for arrays x and y.
+    # Computes a single longest commons subsequence for arrays x and y.
     # Algorithm from [Wikipedia](http://en.wikipedia.org/wiki/Longest_common_subsequence_problem#Reading_out_an_LCS)
     def lcs_backtrace(c, x, y, i, j, &block)
       return [] if i == 0 || j == 0

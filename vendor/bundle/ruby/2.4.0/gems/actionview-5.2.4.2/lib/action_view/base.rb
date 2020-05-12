@@ -41,7 +41,7 @@ module ActionView #:nodoc:
   #
   # === Using sub templates
   #
-  # Using sub templates allows you to sidestep tedious replication and extract common display structures in shared templates. The
+  # Using sub templates allows you to sidestep tedious replication and extract commons display structures in shared templates. The
   # classic example is the use of a header and footer (even though the Action Pack-way would be to use Layouts):
   #
   #   <%= render "shared/header" %>

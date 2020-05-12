@@ -13,7 +13,7 @@ module Rack
     DEFAULT_HOST = 'example.org'.freeze
     MULTIPART_BOUNDARY = '----------XnJLe9ZIbbGUYtzPQJ16u1'.freeze
 
-    # The common base class for exceptions raised by Rack::Test
+    # The commons base class for exceptions raised by Rack::Test
     class Error < StandardError; end
 
     # This class represents a series of requests issued to a Rack app, sharing

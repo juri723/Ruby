@@ -221,7 +221,7 @@ module Rails
         path if File.exist?(path)
       end
 
-      # Returns the base root for a common set of generators. This is used to dynamically
+      # Returns the base root for a commons set of generators. This is used to dynamically
       # guess the default source root.
       def self.base_root
         __dir__

@@ -41,7 +41,7 @@ module ThreadSafe
     end
 
     describe '#compute_if_absent' do
-      it 'common' do
+      it 'commons' do
         with_or_without_default_proc do
           expect_size_change(3) do
             expect(1).to eq @cache.compute_if_absent(:a) { 1 }
@@ -127,7 +127,7 @@ module ThreadSafe
     end
 
     describe '#compute_if_present' do
-      it 'common' do
+      it 'commons' do
         with_or_without_default_proc do
           expect_no_size_change do
             expect(nil).to   eq @cache.compute_if_present(:a) {}
@@ -180,7 +180,7 @@ module ThreadSafe
     end
 
     describe '#compute' do
-      it 'common' do
+      it 'commons' do
         with_or_without_default_proc do
           expect_no_size_change do
             expect_compute(:a, nil, nil) {}
@@ -217,7 +217,7 @@ module ThreadSafe
     end
 
     describe '#merge_pair' do
-      it 'common' do
+      it 'commons' do
         with_or_without_default_proc do
           expect_size_change(1) do
             expect(nil).to  eq @cache.merge_pair(:a, nil) { fail }
@@ -476,7 +476,7 @@ module ThreadSafe
     end
 
     describe '#fetch' do
-      it 'common' do
+      it 'commons' do
         with_or_without_default_proc do |default_proc_set| 
           expect_no_size_change do 
             expect(1).to     eq @cache.fetch(:a, 1)
@@ -535,7 +535,7 @@ module ThreadSafe
     end
 
     describe '#fetch_or_store' do
-      it 'common' do
+      it 'commons' do
         with_or_without_default_proc do |default_proc_set|
           expect_size_change(1) do
             expect(1).to eq @cache.fetch_or_store(:a, 1)
@@ -623,7 +623,7 @@ module ThreadSafe
     end
 
     describe '#each_pair' do
-      it 'common' do
+      it 'commons' do
         @cache.each_pair { |k, v| fail }
         expect(@cache).to eq @cache.each_pair {}
         @cache[:a] = 1

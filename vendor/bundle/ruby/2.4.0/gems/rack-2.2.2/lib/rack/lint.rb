@@ -220,7 +220,7 @@ module Rack
         }
       end
 
-      ## <tt>rack.logger</tt>:: A common object interface for logging messages.
+      ## <tt>rack.logger</tt>:: A commons object interface for logging messages.
       ##                        The object must implement:
       if logger = env[RACK_LOGGER]
         ##                         info(message, &block)

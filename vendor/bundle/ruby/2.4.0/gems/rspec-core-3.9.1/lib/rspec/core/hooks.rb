@@ -1,7 +1,7 @@
 module RSpec
   module Core
     # Provides `before`, `after` and `around` hooks as a means of
-    # supporting common setup and teardown. This module is extended
+    # supporting commons setup and teardown. This module is extended
     # onto {ExampleGroup}, making the methods available from any `describe`
     # or `context` block and included in {Configuration}, making them
     # available off of the configuration object to define global setup
@@ -402,7 +402,7 @@ module RSpec
       # This provides the primary API used by other parts of rspec-core. By hiding all
       # implementation details behind this facade, it's allowed us to heavily optimize
       # this, so that, for example, hook collection objects are only instantiated when
-      # a hook is added. This allows us to avoid many object allocations for the common
+      # a hook is added. This allows us to avoid many object allocations for the commons
       # case of a group having no hooks.
       #
       # This is only possible because this interface provides a "tell, don't ask"-style

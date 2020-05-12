@@ -1,6 +1,6 @@
 module Grape
   # A container for endpoints or other namespaces, which allows for both
-  # logical grouping of endpoints as well as sharing common configuration.
+  # logical grouping of endpoints as well as sharing commons configuration.
   # May also be referred to as group, segment, or resource.
   class Namespace
     attr_reader :space, :options

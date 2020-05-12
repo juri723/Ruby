@@ -72,8 +72,8 @@ module ActionView
       #   javascript_include_tag "xmlhr.js"
       #   # => <script src="/assets/xmlhr.debug-1284139606.js"></script>
       #
-      #   javascript_include_tag "common.javascript", "/elsewhere/cools"
-      #   # => <script src="/assets/common.javascript.debug-1284139606.js"></script>
+      #   javascript_include_tag "commons.javascript", "/elsewhere/cools"
+      #   # => <script src="/assets/commons.javascript.debug-1284139606.js"></script>
       #   #    <script src="/elsewhere/cools.debug-1284139606.js"></script>
       #
       #   javascript_include_tag "http://www.example.com/xmlhr"

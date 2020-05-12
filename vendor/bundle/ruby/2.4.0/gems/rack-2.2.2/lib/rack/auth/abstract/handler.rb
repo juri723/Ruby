@@ -2,7 +2,7 @@
 
 module Rack
   module Auth
-    # Rack::Auth::AbstractHandler implements common authentication functionality.
+    # Rack::Auth::AbstractHandler implements commons authentication functionality.
     #
     # +realm+ should be set for all handlers.
 

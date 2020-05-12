@@ -12,7 +12,7 @@ require 'archive/zip/extra_field'
 
 module Archive; class Zip
   # The Archive::Zip::Entry mixin provides classes with methods implementing
-  # many of the common features of all entry types.  Some of these methods, such
+  # many of the commons features of all entry types.  Some of these methods, such
   # as _dump_local_file_record_ and _dump_central_file_record_, are required by
   # Archive::Zip in order to store the entry into an archive.  Those should be
   # left alone.  Others, such as _ftype_ and <i>mode=</i>, are expected to be

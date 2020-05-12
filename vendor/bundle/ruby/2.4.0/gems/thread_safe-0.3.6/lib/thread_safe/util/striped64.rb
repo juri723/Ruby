@@ -6,7 +6,7 @@ module ThreadSafe
     # Original source code available here:
     # http://gee.cs.oswego.edu/cgi-bin/viewcvs.cgi/jsr166/src/jsr166e/Striped64.java?revision=1.6
     #
-    # Class holding common representation and mechanics for classes supporting
+    # Class holding commons representation and mechanics for classes supporting
     # dynamic striping on 64bit values.
     #
     # This class maintains a lazily-initialized table of atomically updated

@@ -26,7 +26,7 @@ module ActionView
     #       <option value="poem">poem</option>
     #     </select>
     #
-    #   Another common case is a select tag for a <tt>belongs_to</tt>-associated object.
+    #   Another commons case is a select tag for a <tt>belongs_to</tt>-associated object.
     #
     #   Example with <tt>@post.person_id => 2</tt>:
     #

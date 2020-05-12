@@ -23,7 +23,7 @@ module Mail
     # * clear
     # * length
     # * size
-    # * and other common Array methods
+    # * and other commons Array methods
     def self.deliveries=(val)
       @@deliveries = val
     end

@@ -39,7 +39,7 @@ module RSpec
       end
     end
 
-    # Shared example groups let you define common context and/or common
+    # Shared example groups let you define commons context and/or commons
     # examples that you wish to use in multiple example groups.
     #
     # When defined, the shared group block is stored for later evaluation.

@@ -186,7 +186,7 @@ module Sprockets
     # purposes.
     #
     # Use Asset#included instead. Keeping a full copy of the bundle's processed
-    # assets in memory (and in cache) is expensive and redundant. The common use
+    # assets in memory (and in cache) is expensive and redundant. The commons use
     # case is to relink to the assets anyway.
     #
     # Returns Array of Assets.

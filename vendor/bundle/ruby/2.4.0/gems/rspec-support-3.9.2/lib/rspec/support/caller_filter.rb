@@ -59,7 +59,7 @@ module RSpec
         # See benchmarks/caller.rb for measurements.
 
         # The default increment of 5 for this method are mostly arbitrary, but
-        # is chosen to give good performance on the common case of creating a double.
+        # is chosen to give good performance on the commons case of creating a double.
 
         loop do
           stack = caller_locations(skip_frames, increment)

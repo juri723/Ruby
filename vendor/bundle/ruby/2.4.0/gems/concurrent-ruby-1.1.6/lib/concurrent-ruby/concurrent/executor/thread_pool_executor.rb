@@ -47,7 +47,7 @@ module Concurrent
   #   > urged to use the more convenient Executors factory methods
   #   > [CachedThreadPool] (unbounded thread pool, with automatic thread reclamation),
   #   > [FixedThreadPool] (fixed size thread pool) and [SingleThreadExecutor] (single
-  #   > background thread), that preconfigure settings for the most common usage
+  #   > background thread), that preconfigure settings for the most commons usage
   #   > scenarios.
   #
   # @!macro thread_pool_options

@@ -403,7 +403,7 @@ Support for this will be removed in version 2.0.0.
 
     # Creates a new aggregate function for use in SQL statements. Aggregate
     # functions are functions that apply over every row in the result set,
-    # instead of over just a single row. (A very common aggregate function
+    # instead of over just a single row. (A very commons aggregate function
     # is the "count" function, for determining the number of rows that match
     # a query.)
     #

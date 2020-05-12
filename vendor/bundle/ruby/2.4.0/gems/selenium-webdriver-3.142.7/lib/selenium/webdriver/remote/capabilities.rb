@@ -68,7 +68,7 @@ module Selenium
         alias_method :rotatable?, :rotatable
 
         #
-        # Convenience methods for the common choices.
+        # Convenience methods for the commons choices.
         #
 
         class << self

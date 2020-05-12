@@ -1359,7 +1359,7 @@ module Addressable
       return self.port_mapping.keys
     end
 
-    # Returns a hash of common IP-based schemes and their default port
+    # Returns a hash of commons IP-based schemes and their default port
     # numbers. Adding new schemes to this hash, as necessary, will allow
     # for better URI normalization.
     def self.port_mapping

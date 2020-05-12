@@ -701,7 +701,7 @@ module RSpec
       #     config.filter_gems_from_backtrace "rack", "rake"
       #   end
       #
-      # @note The patterns this adds will match the named gems in their common
+      # @note The patterns this adds will match the named gems in their commons
       #   locations (e.g. system gems, vendored with bundler, installed as a
       #   :git dependency with bundler, etc) but is not guaranteed to work for
       #   all possible gem locations. For example, if you have the gem source
@@ -1156,7 +1156,7 @@ module RSpec
       #   end
       #
       #   shared_context_for "model tests", :type => :model do
-      #     # define common model test helper methods, `let` declarations, etc
+      #     # define commons model test helper methods, `let` declarations, etc
       #   end
       #
       #   # This lets you do this:
@@ -1250,7 +1250,7 @@ module RSpec
       # Applies the provided filter only if any of examples match, in constrast
       # to {#filter_run}, which always applies even if no examples match, in
       # which case no examples will be run. This allows you to leave configured
-      # filters in place that are intended only for temporary use. The most common
+      # filters in place that are intended only for temporary use. The most commons
       # example is focus filtering: `config.filter_run_when_matching :focus`.
       # With that configured, you can temporarily focus an example or group
       # by tagging it with `:focus` metadata, or prefixing it with an `f`

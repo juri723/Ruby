@@ -3,7 +3,7 @@ RSpec::Support.require_rspec_core "bisect/utilities"
 module RSpec
   module Core
     module Formatters
-      # Contains common logic for formatters used by `--bisect` to communicate results
+      # Contains commons logic for formatters used by `--bisect` to communicate results
       # back to the bisect runner.
       #
       # Subclasses must define a `notify_results(all_example_ids, failed_example_ids)`

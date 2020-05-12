@@ -360,7 +360,7 @@ module ActionView
     alias :== :eql?
   end
 
-  # An Optimized resolver for Rails' most common case.
+  # An Optimized resolver for Rails' most commons case.
   class OptimizedFileSystemResolver < FileSystemResolver #:nodoc:
     def build_query(path, details)
       query = escape_entry(File.join(@path, path))

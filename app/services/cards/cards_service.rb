@@ -1,27 +1,43 @@
-
-  module Cards
+module Cards
     module CardsService
     module_function
-
+    include Constants::Error
+    include Constants::Hands
     #入力された値が正しいかチェックする
    def validates(card)
-    msg = "" #バリデーション結果
+    msg = []
+    card = card.strip #空白の削除
+
+    re = /^(((.|..|...)( )){4}(.|..|...))$/m
+    re2 = /^(([CDHS])(1[0-3]|[1-9]))$/m
+
+    #● ● ● ● ●（半角スペースで区切られている）ことの確認。
+    if card.blank? || card.scan(re)  ==[] then
+      msg.push(Constants::Error::ERR_MSG_INVALID_STYLE)
+    end
+
+
     sgcard = card.split #カードの値を配列sgcard（シングルカード）に代入する。
+    i = 1
 
-    re = /^(([CDHS])(1[0-3]|[1-9])( )){4}(([CDHS])(1[0-3]|[1-9]))$/m
-
-    if !(sgcard.uniq.count == 5) && sgcard.length == 5 then #カードの重複チェック
-      msg = "カードが重複しています。"
+    #それぞれのカードが適切なスート（C,D,H,S）と数字（1~13）になっているか。
+    if msg.empty? then
+    sgcard.each do |p|
+      if p.scan(re2) == [] then
+        msg.push(i.to_s + Constants::Error::ERR_MSG_INVALID_CARD + "("+ p + ")")
+      end
+      i = i + 1
+    end
     end
 
-    if card.scan(re)  ==[] then
-      msg = "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
-    end
+    #カードの重複チェック
+     if !(sgcard.uniq.count == 5) && sgcard.length == 5 then
+      msg.push(Constants::Error::ERR_MSG_DOUBLE_CARD)
+     end
 
       return msg
 
    end
-
 
     #入力したカードの値を引数とし、ポーカーの役判定を行う。
     def checkCards(card)
@@ -94,7 +110,7 @@
 
     #結果番号を役名に変換する
     def change(number)
-      result = %w(ハイカード ワンペア ツーペア スリー・オブ・ア・カインド ストレート フラッシュ フルハウス フォー・オブ・ア・カインド ストレートフラッシュ)
+      result = Constants::Hands::Result
       return result[number]
     end
 
@@ -118,7 +134,7 @@
         else
           error_list[n] = {"card"=>"","msg"=>""}
           error_list[n]["card"] += card
-          error_list[n]["msg"] += Cards::CardsService.validates(card)
+          error_list[n]["msg"] += Cards::CardsService.validates(card)[0]
           n = n + 1
         end
       end
@@ -144,5 +160,5 @@
 
     end
 
-    end
+  end
   end

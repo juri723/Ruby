@@ -21,7 +21,7 @@ module ActiveModel
   #   person.age  # => "18"
   #
   # Note that, by default, <tt>ActiveModel::Model</tt> implements <tt>persisted?</tt>
-  # to return +false+, which is the most common case. You may want to override
+  # to return +false+, which is the most commons case. You may want to override
   # it in your class to simulate a different scenario:
   #
   #   class Person

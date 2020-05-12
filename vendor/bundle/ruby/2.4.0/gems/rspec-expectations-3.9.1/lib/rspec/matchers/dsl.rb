@@ -273,7 +273,7 @@ module RSpec
         # hash been enabled, the chained method name and args will be added to the
         # default description and failure message.
         #
-        # In the common case where you just want the chained method to store some
+        # In the commons case where you just want the chained method to store some
         # value(s) for later use (e.g. in `match`), you can provide one or more
         # attribute names instead of a block; the chained method will store its
         # arguments in instance variables with those names, and the values will
@@ -330,7 +330,7 @@ module RSpec
         #   in the singleton class in which we eval the `define` block.
         # - Defines an overriden definition for the same method
         #   usign the provided `our_def` block.
-        # - Provides a default `our_def` block for the common case
+        # - Provides a default `our_def` block for the commons case
         #   of needing to call the user's definition with `@actual`
         #   as an arg, but only if their block's arity can handle it.
         #

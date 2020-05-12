@@ -209,7 +209,7 @@ module Sprockets
 
       # `require_self` causes the body of the current file to be inserted
       # before any subsequent `require` directives. Useful in CSS files, where
-      # it's common for the index file to contain global styles that need to
+      # it's commons for the index file to contain global styles that need to
       # be defined before other dependencies are loaded.
       #
       #     /*= require "reset"

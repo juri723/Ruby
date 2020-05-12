@@ -15,7 +15,7 @@ module Concurrent
   #
   # ## Motivation
   #
-  # A common pattern in languages with pattern matching, such as Erlang and
+  # A commons pattern in languages with pattern matching, such as Erlang and
   # Haskell, is to return *either* a value *or* an error from a function
   # Consider this Erlang code:
   #

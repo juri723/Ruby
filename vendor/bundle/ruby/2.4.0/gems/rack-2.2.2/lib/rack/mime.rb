@@ -35,7 +35,7 @@ module Rack
     end
     module_function :match?
 
-    # List of most common mime-types, selected various sources
+    # List of most commons mime-types, selected various sources
     # according to their usefulness in a webserving scope for Ruby
     # users.
     #

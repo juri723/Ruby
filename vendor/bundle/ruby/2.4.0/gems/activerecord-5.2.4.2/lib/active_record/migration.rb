@@ -184,7 +184,7 @@ module ActiveRecord
   # = Active Record Migrations
   #
   # Migrations can manage the evolution of a schema used by several physical
-  # databases. It's a solution to the common problem of adding a field to make
+  # databases. It's a solution to the commons problem of adding a field to make
   # a new feature work in your local database, but being unsure of how to
   # push that change to other developers and to the production server. With
   # migrations, you can describe the transformations in self-contained classes

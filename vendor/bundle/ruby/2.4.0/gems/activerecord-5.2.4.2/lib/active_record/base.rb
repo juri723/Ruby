@@ -31,7 +31,7 @@ module ActiveRecord #:nodoc:
   # the table definition with which they're linked. Adding, removing, and changing attributes
   # and their type is done directly in the database. Any change is instantly reflected in the
   # Active Record objects. The mapping that binds a given Active Record class to a certain
-  # database table will happen automatically in most common cases, but can be overwritten for the uncommon ones.
+  # database table will happen automatically in most commons cases, but can be overwritten for the uncommon ones.
   #
   # See the mapping rules in table_name and the full example in link:files/activerecord/README_rdoc.html for more insight.
   #

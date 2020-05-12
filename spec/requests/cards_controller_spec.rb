@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe CardsController, type: :controller do
+  include Constants::Error
+  include Constants::Hands
 
   #正常系
   describe 'POST #post' do
@@ -19,18 +21,18 @@ RSpec.describe CardsController, type: :controller do
    end
 
     it 'assigns @msg' do
-      expect(assigns(:msg)).to eq ""
+      expect(assigns(:msg)).to eq []
     end
 
     it 'assigns @result' do
-      expect(assigns(:result)).to eq "ワンペア"
+      expect(assigns(:result)).to eq Constants::Hands::Result[1]
     end
 
   end
 
   #異常系
   describe 'POST #post' do
-    before{post :post, params:{cards:"H10 C2 D8 D8"}}
+    before{post :post, params:{cards:"H10 C2 D8 S8"}}
 
     it 'renders the :index template' do
       expect(response).to render_template :index
@@ -41,11 +43,11 @@ RSpec.describe CardsController, type: :controller do
     end
 
     it 'assigns @card' do
-      expect(assigns(:card)).to eq "H10 C2 D8 D8"
+      expect(assigns(:card)).to eq "H10 C2 D8 S8"
     end
 
     it 'assigns @msg' do
-      expect(assigns(:msg)).to eq "5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"
+      expect(assigns(:msg)).to eq [Constants::Error::ERR_MSG_INVALID_STYLE]
     end
 
     it 'assigns @result' do

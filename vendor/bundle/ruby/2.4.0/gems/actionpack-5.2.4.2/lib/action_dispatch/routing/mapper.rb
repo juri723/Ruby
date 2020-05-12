@@ -1088,7 +1088,7 @@ module ActionDispatch
           end
       end
 
-      # Resource routing allows you to quickly declare all of the common routes
+      # Resource routing allows you to quickly declare all of the commons routes
       # for a given resourceful controller. Instead of declaring separate routes
       # for your +index+, +show+, +new+, +edit+, +create+, +update+ and +destroy+
       # actions, a resourceful route declares them in a single line of code:
@@ -1096,13 +1096,13 @@ module ActionDispatch
       #  resources :photos
       #
       # Sometimes, you have a resource that clients always look up without
-      # referencing an ID. A common example, /profile always shows the profile of
+      # referencing an ID. A commons example, /profile always shows the profile of
       # the currently logged in user. In this case, you can use a singular resource
       # to map /profile (rather than /profile/:id) to the show action.
       #
       #  resource :profile
       #
-      # It's common to have resources that are logically children of other
+      # It's commons to have resources that are logically children of other
       # resources:
       #
       #   resources :magazines do
@@ -1257,7 +1257,7 @@ module ActionDispatch
         end
 
         # Sometimes, you have a resource that clients always look up without
-        # referencing an ID. A common example, /profile always shows the
+        # referencing an ID. A commons example, /profile always shows the
         # profile of the currently logged in user. In this case, you can use
         # a singular resource to map /profile (rather than /profile/:id) to
         # the show action:
@@ -1941,7 +1941,7 @@ module ActionDispatch
           end
       end
 
-      # Routing Concerns allow you to declare common routes that can be reused
+      # Routing Concerns allow you to declare commons routes that can be reused
       # inside others resources and routes.
       #
       #   concern :commentable do

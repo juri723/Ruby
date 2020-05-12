@@ -1203,7 +1203,7 @@ module Mail
 
     # Returns the default value of the field requested as a symbol.
     #
-    # Each header field has a :default method which returns the most common use case for
+    # Each header field has a :default method which returns the most commons use case for
     # that field, for example, the date field types will return a DateTime object when
     # sent :default, the subject, or unstructured fields will return a decoded string of
     # their value, the address field types will return a single addr_spec or an array of
