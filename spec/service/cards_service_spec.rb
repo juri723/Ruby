@@ -8,46 +8,52 @@ RSpec.describe "CardsService" do
       error_01 = Constants::Error::ERR_MSG_INVALID_STYLE
       error_02 = Constants::Error::ERR_MSG_INVALID_CARD
       error_03 = Constants::Error::ERR_MSG_DOUBLE_CARD
+      error_04 = Constants::Error::ERR_MSG_BLANK
+
+
+      it '値が入力されてない' do
+        expect(Cards::CardsService.validates("")).to eq [error_04]
+      end
 
   it 'コンマで区切っている' do
-    expect(Cards::CardsService.validates("H10,C10,D10,S2,D8")).to eq error_01
+    expect(Cards::CardsService.validates("H10,C10,D10,S2,D8")).to eq [error_01]
   end
 
   it '区切りがない' do
-  expect(Cards::CardsService.validates("H10C10D10S2D8")).to eq error_01
+  expect(Cards::CardsService.validates("H10C10D10S2D8")).to eq [error_01]
   end
 
   it 'スートではないアルファベット' do
-    expect(Cards::CardsService.validates("D10 C13 D1 Z2 D8")).to eq "4"+ error_02 +"(Z2)"
+    expect(Cards::CardsService.validates("D10 C13 D1 Z2 D8")).to eq ["4"+ error_02 +"(Z2)"]
   end
 
 
   it 'カードが重複している' do
-  expect(Cards::CardsService.validates("H12 C10 D10 C10 D8")).to eq error_03
+  expect(Cards::CardsService.validates("H12 C10 D10 C10 D8")).to eq [error_03]
   end
 
   it 'カードが4枚' do
-    expect(Cards::CardsService.validates("H12 C10 D8 H3")).to eq error_01
+    expect(Cards::CardsService.validates("H12 C10 D8 H3")).to eq [error_01]
   end
 
   it 'カードが6枚' do
-    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 H3")).to eq error_01
+    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 H3")).to eq [error_01]
   end
 
   it '全角入力している' do
-  expect(Cards::CardsService.validates("Ｈ１０　Ｃ１２　Ｄ８　Ｄ９　Ｃ１２")).to eq error_01
+  expect(Cards::CardsService.validates("Ｈ１０　Ｃ１２　Ｄ８　Ｄ９　Ｃ１２")).to eq [error_01]
   end
 
   it 'ひらがなが入っている' do
-    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 Hさん")).to eq error_01
+    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 Hさん")).to eq [error_01]
   end
 
   it '機種依存文字が入っている' do
-    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 ♡3")).to eq error_01
+    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 ♡3")).to eq [error_01]
   end
 
   it '記号が入っている' do
-    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 H?")).to eq error_01
+    expect(Cards::CardsService.validates("H12 C10 D10 D8 C1 H?")).to eq [error_01]
   end
 
   end

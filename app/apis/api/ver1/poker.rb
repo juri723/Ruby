@@ -17,13 +17,10 @@ module API
 
         # 入力された値をチェックし、ポーカーの役判定を行う。
         post do
-          if params.keys == ["cards"] then
-            Cards::CardsService.judge(params[:cards])
-          else
-            error!("不正なパラメータが含まれてます。", 400)
+          error!("不正なパラメータが含まれてます。", 400) unless params.keys == ["cards"]
+          Cards::CardsService.result(params[:cards])
+        end
       end
     end
   end
 end
-  end
-  end

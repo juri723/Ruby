@@ -46,7 +46,7 @@ RSpec.describe CardsController, type: :controller do
     end
 
     it 'assigns @msg' do
-      expect(assigns(:msg)).to eq Constants::Error::ERR_MSG_INVALID_STYLE
+      expect(assigns(:msg)).to eq [Constants::Error::ERR_MSG_INVALID_STYLE]
     end
 
     it 'assigns @result' do
