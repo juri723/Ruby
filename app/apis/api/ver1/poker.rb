@@ -18,9 +18,7 @@ module API
         # 入力された値をチェックし、ポーカーの役判定を行う。
         post do
           if params.keys == ["cards"] then
-          cards = params[:cards]
-          responses = Cards::CardsService.judge(cards)
-          responses
+            Cards::CardsService.judge(params[:cards])
           else
             error!("不正なパラメータが含まれてます。", 400)
       end

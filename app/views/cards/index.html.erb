@@ -12,12 +12,7 @@
       </div>
     <%end %>
 
-    <%unless @msg.blank? then%>
-      <%@msg.each do |p|%>
-        <p><%=p %></p>
-      <%end %>
-      <%end %>
-
+    <p><%=@msg %></p>
     <p><%=@result %></p>
 
   </div>

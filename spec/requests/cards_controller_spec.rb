@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CardsController, type: :controller do
-  include Constants::Error
-  include Constants::Hands
+  include Constants
 
   #正常系
   describe 'POST #post' do
@@ -21,7 +20,7 @@ RSpec.describe CardsController, type: :controller do
    end
 
     it 'assigns @msg' do
-      expect(assigns(:msg)).to eq []
+      expect(assigns(:msg)).to eq nil
     end
 
     it 'assigns @result' do
@@ -47,7 +46,7 @@ RSpec.describe CardsController, type: :controller do
     end
 
     it 'assigns @msg' do
-      expect(assigns(:msg)).to eq [Constants::Error::ERR_MSG_INVALID_STYLE]
+      expect(assigns(:msg)).to eq Constants::Error::ERR_MSG_INVALID_STYLE
     end
 
     it 'assigns @result' do
