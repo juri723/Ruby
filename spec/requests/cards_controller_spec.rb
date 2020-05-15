@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe CardsController, type: :controller do
-  include Constants
 
   #正常系
   describe 'POST #post' do
@@ -24,7 +23,7 @@ RSpec.describe CardsController, type: :controller do
     end
 
     it 'assigns @result' do
-      expect(assigns(:result)).to eq Constants::Hands::Result[1]
+      expect(assigns(:result)).to eq "ワンペア"
     end
 
   end
@@ -46,7 +45,7 @@ RSpec.describe CardsController, type: :controller do
     end
 
     it 'assigns @msg' do
-      expect(assigns(:msg)).to eq [Constants::Error::ERR_MSG_INVALID_STYLE]
+      expect(assigns(:msg)).to eq ["5つのカード指定文字を半角スペース区切りで入力してください。（例：S1 H3 D9 C13 S11）"]
     end
 
     it 'assigns @result' do

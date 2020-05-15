@@ -16,7 +16,7 @@ module Cards
 
     #それぞれのカードが適切なスート（C,D,H,S）と数字（1~13）になっているか。
     card.split.each_with_index do |p,index|
-      msg << (index+1).to_s + Constants::Error::ERR_MSG_INVALID_CARD + "("+ p + ")"  if p.scan(re2) == []
+      msg << (index + 1).to_s + Constants::Error::ERR_MSG_INVALID_CARD + "(" + p + ")"  if p.scan(re2) == []
       return msg if (index == card.split.size - 1) && msg.present?
     end
 
@@ -31,17 +31,17 @@ module Cards
 
       #カードの差分を配列に代入する
       for i in 0..3 do
-        gap[i] = num[i+1] - num[i]
+        gap[i] = num[i + 1] - num[i]
       end
 
       #ストレートフラッシュ
       return 8 if straight?(gap)  && flash?(card)
 
       #フォー・オブ・ア・カインド
-      return 7 if numbers == [1,4]
+      return 7 if numbers == [1, 4]
 
       #フルハウス
-      return 6 if (numbers == [2, 3] || numbers == [3,2])
+      return 6 if (numbers == [2, 3] || numbers == [3, 2])
 
       #フラッシュ
       return 5 if flash?(card)
@@ -50,13 +50,13 @@ module Cards
       return 4 if straight?(gap)
 
       #スリー・オブ・ア・カインド
-      return 3 if numbers == [1,1,3]
+      return 3 if numbers == [1, 1, 3]
 
       #ツーペア
-      return 2 if numbers == [1,2,2]
+      return 2 if numbers == [1, 2, 2]
 
       #ワンペア
-      return 1 if numbers == [1,1,1,2]
+      return 1 if numbers == [1, 1, 1, 2]
 
       #ハイカード
       return 0
@@ -77,9 +77,9 @@ module Cards
       cards.each do |card| #バリデーションが通らない場合、エラーリストを作成。通った場合は結果リストを作成。
         if  Cards::CardsService.validates(card).blank? then
           result_number = Cards::CardsService.check_cards(card)
-          results_list << {card:card, hand:Cards::CardsService.change(result_number), best:false, score:result_number}
+          results_list << {card: card, hand: Cards::CardsService.change(result_number), best: false, score: result_number}
         else
-          error_list << {card:card, msg:Cards::CardsService.validates(card)}
+          error_list << {card: card, msg: Cards::CardsService.validates(card)}
         end
       end
 
@@ -91,13 +91,13 @@ module Cards
         result.delete(:score)
       end
 
-      responses.store("result",results_list) if results_list.present?
-      responses.store("error",error_list) if error_list.present?
+      responses.store("result", results_list) if results_list.present?
+      responses.store("error", error_list) if error_list.present?
       responses
     end
 
     def straight?(gap)
-      (gap == [1,1,1,1]) || (gap == [9,1,1,1]) || (gap == [1,1,1,9])
+      (gap == [1, 1, 1, 1]) || (gap == [9, 1, 1, 1]) || (gap == [1, 1, 1, 9])
     end
 
     def flash?(card)
